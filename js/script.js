@@ -12,14 +12,50 @@ Consigli:
     comunque di inserire una condizione di uscita, all'interno ciclo while
  */
 
-const spesa = ['Latte', 'Formaggio', 'Uova', 'Pasta', 'Carote', 'Banane'];
-let i = 0;
-let testo = ' ';
+const spesa = ['Formaggio', 'Uova', 'Pasta', 'Carote', 'Banane'];
 
-while (spesa[i]) {
-    testo += spesa[i];
-    i++
+const htmlContainer = document.querySelector('.container');
+
+htmlContainer.innerHTML = '';
+
+let counter = 0;
+
+while (counter < spesa.length) {
+
+    console.log(spesa[counter]);
+
+    htmlContainer.innerHTML += `<div> ${spesa[counter]} </div>`
+
+    counter++;
 }
-console.log(testo);
-document.getElementById('lista-spesa').innerHTML = testo;
+
+//recupero pulsante
+
+const altraListaSpesa = ['Latte', 'Aranciata']
+
+let index = 0;
+
+const button = document.querySelector('#add-button');
+
+//ascolto il click
+
+button.addEventListener('click', function () {
+    console.log('clicked');
+
+    //check sul index
+
+    if (index < altraListaSpesa.length) {
+
+        htmlContainer.innerHTML += `<div> Altro cibo: ${altraListaSpesa[index]} </div>`;
+
+        index++;
+
+    }
+
+    //quando clicco aggiungo alla lista un nuovo elemento
+
+
+}
+)
+
 
